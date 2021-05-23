@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row text-right">
+                    <div class="col-md-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label style="color:whitesmoke"><i class="material-icons">search</i></mat-label>
+                            <input style="color:whitesmoke" matInput placeholder="Search Employe Name or Email" [formControl]="searchEmployee">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <button mat-raised-button color="primary" class="mr-1" (click)="add(item)">ADD Employee<i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" matSort (matSortChange)="sortData($event)" matSortActive="id"
+                            matSortDirection="asc" matSortDisableClear>
+                                <thead>
+                                    <th align="center" mat-sort-header="id">
+                                        No
+                                    </th>
+                                    <th align="center" mat-sort-header="name">
+                                        Name
+                                    </th>
+                                    <th align="center" mat-sort-header="email">
+                                        Email
+                                    </th>
+                                    <th align="center" mat-sort-header="group">
+                                        Group
+                                    </th>
+                                    <th align="center">
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of dataUser">
+                                        <td width="5%" align="center">
+                                            {{item.id}}
+                                        </td>
+                                        <td width="40%">
+                                            {{item.first_name}} {{item.last_name}}
+                                        </td>
+                                        <td width="20%">
+                                            {{item.email}}
+                                        </td>
+                                        <td>
+                                            {{item.group}}
+                                        </td>
+                                        <td align="center">
+                                            <button mat-mini-fab color="primary" class="mr-1" (click)="detail(item)"><i class="material-icons">search</i></button>
+                                            <button mat-mini-fab color="accent" class="mr-1" (click)="edit(item)"><i class="material-icons">edit</i></button>
+                                            <button mat-mini-fab color="warn" class="mr-1" (click)="delete(item)"><i class="material-icons">delete</i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-paginator #paginator [length]="dataLength" [pageSize]="paginatorSize"
+                                    (page)="getNext($event)">
+                                </mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

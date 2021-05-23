@@ -1,0 +1,8 @@
+::ng-deep .delete .mat-dialog-container{
+    background-color: red !important;
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-placeholder{
+    color:white;
+  }

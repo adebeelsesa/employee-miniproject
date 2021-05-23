@@ -1,0 +1,86 @@
+<div class="row text-right mt-3">
+    <div class="col">
+        <button mat-raised-button color="warn" (click)="onCloseClick()">X</button>
+    </div>
+</div>
+<center><h1 mat-dialog-title class="header-detail">Detail</h1></center>
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">First Name</span> 
+        </div>
+        <div class="col">
+            : {{data.data.first_name}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Last Name</span> 
+        </div>
+        <div class="col">
+            : {{data.data.last_name}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Email</span>
+        </div>
+        <div class="col"> 
+            : {{data.data.email}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Username</span> 
+        </div>
+        <div class="col">
+            : {{data.data.username}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Birthdate</span> 
+        </div>
+        <div class="col">
+            : {{data.data.birthdate | date: 'dd MMMM yyyy'}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Gender</span> 
+        </div>
+        <div class="col">
+            : {{data.data.gender}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Group</span> 
+        </div>
+        <div class="col">
+            : {{data.data.group}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Basic Salary</span>
+        </div>
+        <div class="col">
+            : Rp. {{data.data.basicSalary | number}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="title-detail">Description</span>:
+        </div>
+        <div class="col">
+            : {{data.data.description}}
+        </div>
+    </div>
+</div>
